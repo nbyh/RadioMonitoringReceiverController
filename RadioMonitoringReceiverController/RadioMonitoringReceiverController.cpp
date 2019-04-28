@@ -8,8 +8,8 @@ salHandle sensorHandle, measHandle;
 salErrorType error;
 void RadioReceiverCtrl::ConnectRadioReceiver(String^ ip)
 {
-	char ipchar = (char)Marshal::StringToHGlobalAnsi(ip).ToPointer();
-	error = salConnectSensor2(&sensorHandle, 0, &ipchar, NULL, 0);
+	char *ipchar = (char*)Marshal::StringToHGlobalAnsi(ip).ToPointer();
+	error = salConnectSensor2(&sensorHandle, 0, ipchar, NULL, 0);
 	radioHandle = sensorHandle;
 	Marshal::FreeHGlobal((IntPtr)ipchar);
 	if (errno != SAL_ERR_NONE)
@@ -64,151 +64,159 @@ void RadioReceiverCtrl::AbortAllRadioReceiver()
 
 void RadioReceiverCtrl::DiscoveredSensorInfo()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::AddSensorToSms()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::RemoveSensorFromSms()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::RemoveSensor()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::BeginReport()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::EndReport()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::ManagedSensorStatus()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::DiscoverSensors()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::GetNextDiscoveredSensor()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::OpenSensorList()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::GetNextSensor()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::CloseSensorList()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::RebootSensor()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
 void RadioReceiverCtrl::CloseSensor()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::ComputeFftSegTableSize()
+void RadioReceiverCtrl::ComputeFftSegTableSize()
 {
-	throw gcnew System::NotImplementedException();
+	salSweepComputationParms* sscp;
+	sscp->startFrequency = 123;
+	sscp->stopFrequency = 123;
+	sscp->rbw = 1233;
+	salSweepParms ssp;
+	ssp.numSweeps = 123;
+	salSweepComputationResults result;
+	errno = salComputeFftSegmentTableSize(sscp, &ssp, &result);
+
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::InitFftSegTabel()
+void RadioReceiverCtrl::InitFftSegTabel()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::StartSweep()
+void RadioReceiverCtrl::StartSweep()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::GetSegData()
+void RadioReceiverCtrl::GetSegData()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::SendSweepCmd()
+void RadioReceiverCtrl::SendSweepCmd()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::SetTuner()
+void RadioReceiverCtrl::SetTuner()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::GetTuner()
+void RadioReceiverCtrl::GetTuner()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::RequestTimeData()
+void RadioReceiverCtrl::RequestTimeData()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::GetTimeData()
+void RadioReceiverCtrl::GetTimeData()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::SendTimeDataCmd()
+void RadioReceiverCtrl::SendTimeDataCmd()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::RequestDemodData()
+void RadioReceiverCtrl::RequestDemodData()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::GetDemodData()
+void RadioReceiverCtrl::GetDemodData()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::SendDemodCmd()
+void RadioReceiverCtrl::SendDemodCmd()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::StartIqSweep()
+void RadioReceiverCtrl::StartIqSweep()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::GetIqSweepData()
+void RadioReceiverCtrl::GetIqSweepData()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
-void RadioMonitoringReceiverController::RadioReceiverCtrl::SendIqSweepCmd()
+void RadioReceiverCtrl::SendIqSweepCmd()
 {
-	throw gcnew System::NotImplementedException();
+	
 }
 
